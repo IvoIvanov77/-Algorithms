@@ -35,6 +35,10 @@ public class Stack<T> implements Iterable<T>{
 		size --;
 		return item;
 	}
+	
+	public T peek(){
+		return first.item;
+	}
 
 	@Override
 	public Iterator<T> iterator() {

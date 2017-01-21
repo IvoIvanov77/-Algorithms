@@ -14,6 +14,10 @@ public class FixedCapacityStackOfStrings {
 	public boolean isEmpty() {
 		return this.size == 0;
 	}
+	
+	public boolean isFull(){
+		return this.size == array.length;
+	}
 
 	public int size() {
 		return this.size;

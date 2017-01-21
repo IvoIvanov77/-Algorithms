@@ -1,6 +1,5 @@
 package fundamentals;
 
-
 import java.util.Arrays;
 import edu.princeton.cs.algs4.*;
 
@@ -244,4 +243,21 @@ public class SimpleAlgorithms {
 			return mystery(a * a, b / 2);
 		return mystery(a * a, b / 2) * a;
 	}
+	
+//	Return the binary representation of N (110010 when N is 50).
+	public static String binaryRepresentation(int number){
+		Stack<Integer> stack = new Stack<Integer>();
+		StringBuilder result = new StringBuilder();
+		int n = number;
+		while(n > 0)
+		{
+			stack.push(n % 2);
+			n = n / 2;
+		}for(int d:stack){
+			result.append(d);
+		}
+		return result.toString();
+	}
+
+	
 }
