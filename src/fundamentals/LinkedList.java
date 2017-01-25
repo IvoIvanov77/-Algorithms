@@ -191,5 +191,33 @@ public class LinkedList<T> implements Iterable<T> {
 		}
 		return node.item;
 	}
+	
+	public void reverse(){
+		Node current = head;
+		Node previous = null;
+		while(current != null){
+			Node next = current.next;
+			current.next = previous;
+			previous = current;
+			current = next;			
+		}
+		Node newHead = tail;
+		tail = head;
+		head = newHead;
+	}
+	
+	public Node reverseRecursive(Node first){
+		if(first == null){
+			return null;
+		}
+		if(first.next == null){
+			return first;
+		}
+		Node second = first.next;
+		Node rest = reverseRecursive(second);
+		second.next = first;
+		first.next = null;
+		return rest;
+	}
 
 }
